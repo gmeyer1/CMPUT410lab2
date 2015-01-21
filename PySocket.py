@@ -8,9 +8,9 @@ import socket
 import sys
 
 try:
-	import thread
+    import thread
 except ImportError:
-	import _thread as thread
+    import _thread as thread
  
 HOST = ''
 PORT = 8888
@@ -47,6 +47,6 @@ while 1:
     conn, addr = s.accept()
     print 'Connected with ' + addr[0] + ':' + str(addr[1])
      
-    start_new_thread(clientthread ,(conn,))
+    thread.start_new_thread(clientthread ,(conn,))
  
 s.close()
